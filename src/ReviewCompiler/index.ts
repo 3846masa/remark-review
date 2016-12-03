@@ -39,7 +39,7 @@ export default class ReviewCompiler {
     visit(node, 'yaml', (yamlNode: any) => {
       try {
         const opts = jsYAML.safeLoad(yamlNode.value);
-        this.options = Object.assign(this.options, opts.latex || {});
+        this.options = Object.assign(this.options, opts.remark || {});
       } catch (_e) {
         this.file.fail(_e.message || _e, yamlNode);
       }

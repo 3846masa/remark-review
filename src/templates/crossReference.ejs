@@ -1,6 +1,20 @@
-<% for (var idx = 0; idx < refs.length; idx++) {
-  -%>\ref{<%= refs[idx] -%>}<%
-} -%>
-<% if (cites.length !== 0) {
-  -%>\cite{<%= cites.join(',') -%>}<%
-} -%>
+<%
+for (var idx = 0; idx < refs.length; idx++) {
+  var ref = refs[idx];
+
+  if (ref.includes('fig:')) {
+    -%>@<img>{<%= refs[idx] -%>}<%
+  } else if (ref.includes('tbl:')) {
+    -%>@<table>{<%= refs[idx] -%>}<%
+  } else if (ref.includes('code:')) {
+    -%>@<list>{<%= refs[idx] -%>}<%
+  } else {
+    -%>@<raw>{|latex|\ref{<%= refs[idx] -%>\}}<%
+  }
+}
+-%>
+<%
+if (cites.length !== 0) {
+  -%>@<raw>{|latex|\cite{<%= cites.join(',') -%>\}}<%
+}
+-%>

@@ -1,7 +1,7 @@
 {
-  "name": "@paperist/remark-latex",
-  "description": "wooorm/remark plugin for latex",
-  "version": "0.0.5",
+  "name": "@3846masa/remark-review",
+  "description": "wooorm/remark plugin for review",
+  "version": "0.0.0",
   "dependencies": {
     "ejs": "^2.5.2",
     "js-yaml": "^3.7.0",
@@ -25,10 +25,9 @@
     "index.js"
   ],
   "keywords": [
-    "latex",
+    "review",
     "markdown",
-    "remark",
-    "tex"
+    "remark"
   ],
   "license": "MIT",
   "main": "index.js",

@@ -5,7 +5,7 @@ import * as jsYAML from 'js-yaml';
 import converters, { Converters } from '../converters';
 import visit = require('unist-util-visit');
 
-export default class LaTeXCompiler {
+export default class ReviewCompiler {
 
   public footnotes: any[] = [];
   public definitions: any = {};
@@ -17,11 +17,11 @@ export default class LaTeXCompiler {
   ) {
     if (file.extension) {
       file.move({
-        extension: 'tex',
+        extension: 're',
       });
     }
     if (file.extname) {
-      file.extname = '.tex';
+      file.extname = '.re';
     }
 
     this.options.templatesDir =

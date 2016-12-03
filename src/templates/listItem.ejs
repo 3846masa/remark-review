@@ -1,1 +1,7 @@
-\item <%= value %>
+<%
+if (ordered) {
+  -%><%= index + 1 -%>. <%= value -%><%
+} else {
+  -%><%= '*'.repeat(depth) -%> <%= value.trim() -%><%
+}
+-%>

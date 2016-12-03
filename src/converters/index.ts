@@ -1,4 +1,4 @@
-import LaTeXCompiler from '../LaTeXCompiler';
+import ReviewCompiler from '../ReviewCompiler';
 
 import join from './join';
 import joinWithLineBreak from './joinWithLineBreak';
@@ -18,7 +18,7 @@ export interface Converters {
   [key: string]: (...args: any[]) => any,
 }
 
-export { LaTeXCompiler };
+export { ReviewCompiler };
 export default <Converters> {
   ignore,
   image,
@@ -43,7 +43,7 @@ export default <Converters> {
   root: joinWithLineBreak,
   blockquote: joinWithLineBreak,
   list: joinWithLineBreak,
-  listItem: joinWithLineBreak,
+  listItem: join,
   tableRow: joinWithLineBreak,
   code: escape,
   inlineCode: escape,

@@ -1,7 +1,7 @@
-import LaTeXCompiler from '../../LaTeXCompiler';
+import ReviewCompiler from '../../ReviewCompiler';
 
 export default function reference(
-  this: LaTeXCompiler,
+  this: ReviewCompiler,
   node: any,
 ) {
   const identifier = node.identifier.toUpperCase();

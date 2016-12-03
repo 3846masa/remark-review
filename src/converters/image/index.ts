@@ -1,8 +1,8 @@
-import LaTeXCompiler from '../../LaTeXCompiler';
+import ReviewCompiler from '../../ReviewCompiler';
 import * as qs from 'querystring';
 
 export default function image(
-  this: LaTeXCompiler,
+  this: ReviewCompiler,
   node: any,
   parent: any,
 ) {

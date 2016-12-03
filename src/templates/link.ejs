@@ -1,1 +1,1 @@
-\href{<%= url -%>}{<%= value -%>}
+@<href>{<%= String(url).replace(/,/g, '\\,') -%>, <%= value -%>}

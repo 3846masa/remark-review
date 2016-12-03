@@ -1,7 +1,7 @@
-import LaTeXCompiler from '../../LaTeXCompiler';
+import ReviewCompiler from '../../ReviewCompiler';
 
 export default function blockquote(
-  this: LaTeXCompiler,
+  this: ReviewCompiler,
   node: any,
 ) {
   node.value = this.all(node).join('\n');

@@ -1,6 +1,9 @@
-\begin{figure}[tb]
-\begin{center}
-\includegraphics[<%= config %>]{<%= url %>}
-\caption{<%= caption %>}<%= label %>
-\end{center}
-\end{figure}
+<%
+var id = (() => {
+  var arr = url.split('/').pop().split('.');
+  arr.pop();
+  return arr.join('.');
+})();
+-%>
+//image[<%= id %>]<%= config %>]{
+//}

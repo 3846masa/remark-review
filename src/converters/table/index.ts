@@ -1,8 +1,8 @@
-import LaTeXCompiler from '../../LaTeXCompiler';
+import ReviewCompiler from '../../ReviewCompiler';
 import visit = require('unist-util-visit');
 
 export default function table(
-  this: LaTeXCompiler,
+  this: ReviewCompiler,
   node: any,
   parent: any,
 ) {

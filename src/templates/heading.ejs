@@ -1,16 +1,3 @@
 
-<% if (depth == 1) {
-  -%>\chapter{<%= value -%>}<%
-} else if (depth == 2) {
-  -%>\section{<%= value -%>}<%
-} else if (depth == 3) {
-  -%>\subsection{<%= value -%>}<%
-} else if (depth == 4) {
-  -%>\subsubsection{<%= value -%>}<%
-} else if (depth == 5) {
-  -%>\paragraph{<%= value -%>}<%
-} else {
-  -%>\subparagraph{<%= value -%>}<%
-} -%>
-<%= label %>
+<%= '='.repeat(depth) -%> <%= value -%>
 <%# Line Break %>

@@ -3,6 +3,7 @@ import ReviewCompiler from '../ReviewCompiler';
 import join from './join';
 import joinWithLineBreak from './joinWithLineBreak';
 
+import raw from './raw';
 import ignore from './ignore';
 import escape from './escape';
 import heading from './heading';
@@ -44,8 +45,8 @@ export default <Converters> {
   blockquote: joinWithLineBreak,
   list: joinWithLineBreak,
   listItem: join,
-  tableRow: joinWithLineBreak,
-  code: escape,
+  tableRow: join,
+  code: raw,
   inlineCode: escape,
   text: escape,
   linkReference: reference,

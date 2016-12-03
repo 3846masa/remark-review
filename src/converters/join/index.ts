@@ -4,6 +4,6 @@ export default function blockquote(
   this: ReviewCompiler,
   node: any,
 ) {
-  node.value = this.all(node).join('').trim().replace(/\t/g, '\x20\x20');
+  node.value = this.all(node).join('').trim();
   return node;
 }

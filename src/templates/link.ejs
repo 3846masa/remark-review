@@ -1,1 +1,7 @@
-@<href>{<%= String(url).replace(/,/g, '\\,') -%>, <%= value -%>}
+<%
+if (url === value) {
+  -%>@<href>{<%= String(url).replace(/,/g, '\\,') -%>}<%
+} else {
+  -%>@<href>{<%= String(url).replace(/,/g, '\\,') -%>, <%= value -%>}<%
+}
+-%>

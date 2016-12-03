@@ -1,7 +1,7 @@
 {
   "name": "@3846masa/remark-review",
   "description": "wooorm/remark plugin for review",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {
     "ejs": "^2.5.2",
     "js-yaml": "^3.7.0",

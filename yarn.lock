@@ -26,6 +26,10 @@
   version "3.5.28"
   resolved "https://registry.yarnpkg.com/@types/js-yaml/-/js-yaml-3.5.28.tgz#efd7614f8eb1b924c41235ff653b7370da467fac"
 
+"@types/lodash@^4.14.44":
+  version "4.14.44"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.44.tgz#04585ff0b80d5e434a5f86f15e7964be4f775cba"
+
 "@types/node":
   version "6.0.48"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.48.tgz#86ccc15f66b73cbbc5eb3483398936c585122b3c"
@@ -843,7 +847,7 @@ lodash.padstart@^4.1.0:
   version "4.6.1"
   resolved "https://registry.yarnpkg.com/lodash.padstart/-/lodash.padstart-4.6.1.tgz#d2e3eebff0d9d39ad50f5cbd1b52a7bce6bb611b"
 
-lodash@^4.11.1, lodash@^4.14.0, lodash@^4.14.1:
+lodash@^4.11.1, lodash@^4.14.0, lodash@^4.14.1, lodash@^4.17.2:
   version "4.17.2"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.2.tgz#34a3055babe04ce42467b607d700072c7ff6bf42"
 

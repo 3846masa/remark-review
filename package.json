@@ -35,7 +35,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npm-run-all clean -p build:*",
-    "build:cp": "cpx 'src/**/!(*.ts)' lib",
+    "build:cp": "cpx src/templates/* lib/templates",
     "build:ts": "tsc",
     "clean": "rimraf lib/*",
     "postpublish": "greenkeeper-postpublish"

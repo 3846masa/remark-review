@@ -5,6 +5,7 @@ var id = (() => {
   return arr.join('.');
 })();
 -%>
-//image[<%= id %>][<%= caption.replace(/\]/g, '\\]') %>][<%= config %>]{
+<%# Line Break %>
+//image[<%= id %>][<%= (caption || '').replace(/\]/g, '\\]') %>][<%= config %>]{
 //}
 <%# Line Break %>

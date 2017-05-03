@@ -1,5 +1,7 @@
 # remark-review
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/3846masa/remark-review.svg)](https://greenkeeper.io/)
+
 [![standard-readme compliant][standard-readme-badge]][standard-readme]
 [![LICENSE][license-badge]][license]
 

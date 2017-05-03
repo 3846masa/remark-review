@@ -12,10 +12,10 @@
   "devDependencies": {
     "@types/ejs": "^2.3.33",
     "@types/js-yaml": "^3.5.28",
-    "@types/node": "^6.0.48",
+    "@types/node": "^7.0.15",
     "cpx": "^1.5.0",
     "greenkeeper-postpublish": "^1.0.1",
-    "npm-run-all": "^3.1.1",
+    "npm-run-all": "^4.0.2",
     "rimraf": "^2.5.4",
     "typescript": "^2.0.10"
   },

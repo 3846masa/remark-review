@@ -4,26 +4,12 @@ import { defaultsDeep } from 'lodash';
 export default function escape(node: UNIST.Text) {
   return defaultsDeep(
     {
-      value: escapeReVIEW(convertQuote(node.value)),
+      value: escapeReVIEW(node.value),
     },
     node,
   ) as UNIST.Node;
 }
 
 function escapeReVIEW(text: string) {
-  const escapedText = text.replace(/\\\\|[\{\}#\$%&_]|[|]|[<>^~]/g, (str) => {
-    if (str === '\\\\') {
-      return '\\textbackslash{}';
-    } else if (str.match(/[\{\}#\$%&_]/)) {
-      return `\\${str}`;
-    } else {
-      return `\\symbol{\`\\${str}}`;
-    }
-  });
-  return escapedText;
-}
-
-function convertQuote(text: string) {
-  const convertedText = text.replace(/'(.+?)'/g, "`$1'").replace(/"(.+?)"/g, "``$1''");
-  return convertedText;
+  return text.replace(/\}/g, '\\}').replace(/\t/g, '\x20\x20\x20\x20');
 }

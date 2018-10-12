@@ -11,7 +11,6 @@ import reference from './reference';
 import image from './image';
 import footnote from './footnote';
 import table from './table';
-import inlineCode from './inlineCode';
 import crossReference from './crossReference';
 import footnoteReference from './footnoteReference';
 import math from './math';
@@ -30,7 +29,6 @@ export default {
   table,
   heading,
   footnote,
-  inlineCode,
   crossReference,
   footnoteReference,
   math,
@@ -52,6 +50,7 @@ export default {
   tableRow: joinWithLineBreak,
   code: raw,
   crossReferenceLabel: raw,
+  inlineCode: escape,
   text: escape,
   linkReference: reference,
   imageReference: reference,

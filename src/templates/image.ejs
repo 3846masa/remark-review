@@ -1,0 +1,11 @@
+<%
+var id = (() => {
+  var arr = url.split('/').pop().split('.');
+  arr.pop();
+  return arr.join('.');
+})();
+-%>
+<%# Line Break %>
+//image[<%= id %>][<%= (caption || '').replace(/\]/g, '\\]') %>][<%= utils.stringify(config) %>]{
+//}
+<%# Line Break %>

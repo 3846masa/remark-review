@@ -1,13 +1,14 @@
 <%
 for (var idx = 0; idx < refs.length; idx++) {
   var ref = refs[idx];
+  var trimmed = ref.split(':').pop();
 
   if (ref.includes('fig:')) {
-    -%>@<img>{<%= refs[idx] -%>}<%
+    -%>@<img>{<%= trimmed -%>}<%
   } else if (ref.includes('tbl:')) {
-    -%>@<table>{<%= refs[idx] -%>}<%
+    -%>@<table>{<%= trimmed -%>}<%
   } else if (ref.includes('code:')) {
-    -%>@<list>{<%= refs[idx] -%>}<%
+    -%>@<list>{<%= trimmed -%>}<%
   } else {
     -%>@<raw>{|latex|\ref{<%= refs[idx] -%>\}}<%
   }

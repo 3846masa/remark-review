@@ -1,3 +1,7 @@
-//emlist[][<%= lang %>]{
+<%
+  var [_, lang, meta] = lang.split(/^(.*?)(?:\s+(.*))?$/);
+  meta = (meta || '');
+-%>
+//emlist[<%= meta %>][<%= lang %>]{
 <%= value %>
 //}

@@ -1,4 +1,4 @@
-<%= value -%>
+<%= !value.trim() ? '.' : value.trim() -%>
 <% if (!isLast) {
   -%><%= '\t' -%><%
 } -%>

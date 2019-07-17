@@ -6,7 +6,7 @@ export interface ReVIEWCompilerOptions {
         [key: string]: any;
     };
     baseTemplate: string | null;
-    templatesDir: string | null;
+    templatesDir: string;
     imageConfigs: {
         [key: string]: any;
     };
@@ -30,10 +30,10 @@ export default class ReVIEWCompiler {
     private templates;
     constructor(tree: UNIST.Node, file: any);
     parse(value: string): any;
-    private readTemplate(type);
+    private readTemplate;
     compile(): string;
-    visit(node: any, parent?: UNIST.Parent, idx?: number): any;
-    convert(node: UNIST.Node): any;
+    visit(node: any, parent?: UNIST.Parent, idx?: number): string;
+    convert(node: UNIST.Node): string;
     all(parent: UNIST.Parent): string[];
     generateFootnotes(): string;
 }

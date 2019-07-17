@@ -14,7 +14,7 @@ import { MDAST } from 'mdast';
 export interface ReVIEWCompilerOptions {
   documentInfo: { [key: string]: any };
   baseTemplate: string | null;
-  templatesDir: string | null;
+  templatesDir: string;
   imageConfigs: { [key: string]: any };
 }
 

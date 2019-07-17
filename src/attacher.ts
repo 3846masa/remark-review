@@ -6,7 +6,7 @@ import searchFile from './searchFile';
 export default function attacher(this: any, options: ReVIEWCompilerOptions) {
   const mergedOpts: ReVIEWCompilerOptions = defaultsDeep(options, (this.data('settings') || { review: {} }).review);
 
-  mergedOpts.baseTemplate = searchFile(mergedOpts.baseTemplate);
+  mergedOpts.baseTemplate = mergedOpts.baseTemplate ? searchFile(mergedOpts.baseTemplate) : null;
   mergedOpts.templatesDir = searchFile(mergedOpts.templatesDir);
 
   ReVIEWCompiler.defaultOptions = defaultsDeep(mergedOpts, ReVIEWCompiler.defaultOptions);

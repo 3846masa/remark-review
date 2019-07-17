@@ -1,1 +1,1 @@
-export default function searchFile(relativePath: string | null, cwd?: string): string | null;
+export default function searchFile(relativePath: string, cwd?: string): string;

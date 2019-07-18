@@ -4,12 +4,16 @@ import { defaultsDeep } from 'lodash';
 import searchFile from './searchFile';
 
 export default function attacher(this: any, options: ReVIEWCompilerOptions) {
-  const mergedOpts: ReVIEWCompilerOptions = defaultsDeep(options, (this.data('settings') || { review: {} }).review);
+  const mergedOpts: ReVIEWCompilerOptions = defaultsDeep(
+    options,
+    (this.data('settings') || { review: {} }).review,
+    ReVIEWCompiler.defaultOptions,
+  );
 
   mergedOpts.baseTemplate = mergedOpts.baseTemplate ? searchFile(mergedOpts.baseTemplate) : null;
   mergedOpts.templatesDir = searchFile(mergedOpts.templatesDir);
 
-  ReVIEWCompiler.defaultOptions = defaultsDeep(mergedOpts, ReVIEWCompiler.defaultOptions);
+  ReVIEWCompiler.defaultOptions = mergedOpts;
 
   ReVIEWCompiler.processor = this;
   this.Compiler = ReVIEWCompiler;

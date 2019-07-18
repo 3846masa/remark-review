@@ -176,7 +176,7 @@ export default class ReVIEWCompiler {
       return '';
     }
 
-    return template(node).replace(/\n$/, '');
+    return template({ node }).replace(/\n$/, '');
   }
 
   all(parent: UNIST.Parent) {

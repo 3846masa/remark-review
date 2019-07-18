@@ -1,11 +1,11 @@
 <%
 var id = (() => {
-  var arr = url.split('/').pop().split('.');
+  var arr = node.url.split('/').pop().split('.');
   arr.pop();
   return arr.join('.');
 })();
 -%>
 <%# Line Break %>
-//image[<%= id %>][<%= (caption || '').replace(/\]/g, '\\]') %>][<%= utils.stringify(config) %>]{
+//image[<%= id %>][<%= (node.caption || '').replace(/\]/g, '\\]') %>][<%= node.utils.stringify(node.config) %>]{
 //}
 <%# Line Break %>

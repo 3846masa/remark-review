@@ -1,7 +1,7 @@
 <%
-  var [_, lang, meta] = lang.split(/^(.*?)(?:\s+(.*))?$/);
+  var [_, lang, meta] = node.lang.split(/^(.*?)(?:\s+(.*))?$/);
   meta = (meta || '');
 -%>
 //emlist[<%= meta %>][<%= lang %>]{
-<%= value %>
+<%= node.value %>
 //}

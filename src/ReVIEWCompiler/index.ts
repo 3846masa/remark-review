@@ -91,10 +91,13 @@ export default class ReVIEWCompiler {
 
     visit(node, 'yaml', (YAMLNode: MDAST.YAML) => {
       try {
-        const opts = jsYAML.safeLoad(YAMLNode.value) || {};
-        opts.baseTemplate = searchFile(opts.baseTemplate, this.file.dirname);
-        opts.templatesDir = searchFile(opts.templatesDir, this.file.dirname);
-        this.options = defaultsDeep(opts, this.options);
+        this.options = defaultsDeep(jsYAML.safeLoad(YAMLNode.value) || {}, this.options);
+
+        this.options.baseTemplate = this.options.baseTemplate
+          ? searchFile(this.options.baseTemplate, this.file.dirname)
+          : null;
+        this.options.templatesDir = searchFile(this.options.templatesDir, this.file.dirname);
+
         return true;
       } catch (_e) {
         this.file.fail(_e.message || _e, YAMLNode);

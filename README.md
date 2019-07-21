@@ -1,12 +1,15 @@
 # remark-review
 
+[![npm][npm-badge]][npm]
 [![LICENSE][license-badge]][license]
 [![standard-readme compliant][standard-readme-badge]][standard-readme]
 
+[npm]: https://www.npmjs.com/package/remark-review?icon=npm
 [license]: https://3846masa.mit-license.org
 [standard-readme]: https://github.com/RichardLitt/standard-readme
-[license-badge]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAIGNIUk0AAHomAACAhAAA%2BgAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAVUExURSBTICJcIiNgIiZoJTuhNyt3Kf///%2BCqxSgAAAAGdFJOUwpclbn%2B4Fj6/H8AAAABYktHRAZhZrh9AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJTUUH4AkEEjEV7MDQQwAAAGBJREFUCNc1TUEKgDAMi07vE/Q%2BRD8g%2B4BbvAvi/79iMjDQJm1CC6BbDzRsZI3incIpYeYFhCaYnLiyPYnYkwWZFWoFHrSuttCmmbwXh0eJQYVON4JthZTxCzzAmyb8%2BAAKXBRyN6RyZQAAAABJRU5ErkJggg==
-[standard-readme-badge]: https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square
+[npm-badge]: https://flat.badgen.net/npm/v/remark-review
+[license-badge]: https://flat.badgen.net/badge/license/MIT/blue
+[standard-readme-badge]: https://flat.badgen.net/badge/standard-readme/OK/green
 
 > [wooorm/remark] plugin for [kmuto/review]
 
@@ -30,7 +33,7 @@
 ## Install
 
 ```
-npm i remark remark-cli github:3846masa-tmp/remark-review
+npm i remark-cli remark-review
 ```
 
 ## Usage
@@ -40,13 +43,13 @@ npm i remark remark-cli github:3846masa-tmp/remark-review
 See [here][remark-cli] for more details.
 
 ```bash
-remark -u remark-review document.md -o document.re
+remark --use remark-review document.md --output
 ```
 
 If you configure via `rc` file, you should type below.
 
 ```bash
-remark -r ./remarkrc.yml document.md -o document.re
+remark document.md
 ```
 
 [remark-cli]: https://github.com/wooorm/remark/tree/master/packages/remark-cli#cli
@@ -181,6 +184,4 @@ PRs accepted.
 
 ## License
 
-![3846masa] MIT (c) 3846masa
-
-[3846masa]: https://www.gravatar.com/avatar/cfeae69aae4f4fc102960f01d35d2d86?s=50
+[MIT (c) 3846masa](https://3846masa.mit-license.org)

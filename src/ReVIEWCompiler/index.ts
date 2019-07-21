@@ -1,10 +1,10 @@
-import * as path from 'path';
-import * as fs from 'fs';
-import * as ejs from 'ejs';
-import * as jsYAML from 'js-yaml';
+import path from 'path';
+import fs from 'fs';
+import ejs from 'ejs';
+import jsYAML from 'js-yaml';
 import { defaultsDeep } from 'lodash';
 import converters, { Converters } from '../converters';
-import visit = require('unist-util-visit');
+import visit from 'unist-util-visit';
 
 import searchFile from '../searchFile';
 

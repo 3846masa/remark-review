@@ -1,7 +1,7 @@
-import FrontMatterPlugin = require('remark-frontmatter');
-import MathPlugin = require('@paperist/remark-math');
-import CrossrefPlugin = require('@paperist/remark-crossref');
-import CaptionPlugin = require('@paperist/remark-caption');
+import FrontMatterPlugin from 'remark-frontmatter';
+import MathPlugin from '@paperist/remark-math';
+import CrossrefPlugin from '@paperist/remark-crossref';
+import CaptionPlugin from '@paperist/remark-caption';
 import ReVIEWPlugin from './attacher';
 
 export const settings = {

@@ -1,6 +1,6 @@
 import * as unist from 'unist';
 import * as mdast from 'mdast';
-import visit = require('unist-util-visit');
+import visit from 'unist-util-visit';
 import { defaultsDeep } from 'lodash';
 
 import ReVIEWCompiler from '../../ReVIEWCompiler';

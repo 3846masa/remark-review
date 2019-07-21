@@ -37,6 +37,7 @@ export default class ReVIEWCompiler {
 
   public footnotes: MDAST.FootnoteDefinition[] = [];
   public definitions: { [identifier: string]: MDAST.Definition } = {};
+  public images: { [identifier: string]: MDAST.Image } = {};
   public converters: Converters = converters;
   public options: ReVIEWCompilerOptions = ReVIEWCompiler.defaultOptions;
 
@@ -112,6 +113,32 @@ export default class ReVIEWCompiler {
     });
     visit(node, 'footnoteDefinition', (def: MDAST.FootnoteDefinition) => {
       this.footnotes.push(def);
+      return true;
+    });
+
+    visit(node, 'image', (imgNode: MDAST.Image, idx, parent: UNIST.Parent) => {
+      if (imgNode.url) {
+        const sibling = parent.children[idx! + 1];
+        if (sibling && sibling.type === 'crossReferenceLabel') {
+          const labelNode = sibling as MDAST.CrossReferenceLabel;
+          this.images[labelNode.label] = imgNode;
+        }
+      }
+      return true;
+    });
+
+    visit(node, 'crossReference', (crossRefNode: MDAST.CrossReference) => {
+      const identifiers = crossRefNode.identifiers;
+      for (let idx = 0; idx < identifiers.length; idx++) {
+        const identifier = identifiers[idx];
+        if (identifier in this.images) {
+          const imgName = path
+            .basename(this.images[identifier].url)
+            .split('.')
+            .shift();
+          identifiers[idx] = `fig:${imgName}`;
+        }
+      }
       return true;
     });
 

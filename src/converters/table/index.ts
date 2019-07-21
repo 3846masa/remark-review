@@ -1,12 +1,13 @@
-import { UNIST } from 'unist';
-import { MDAST } from 'mdast';
+import * as unist from 'unist';
+import * as mdast from 'mdast';
+
 import { defaultsDeep } from 'lodash';
 import visit = require('unist-util-visit');
 
 import ReVIEWCompiler, { ConvertOptionsNode } from '../../ReVIEWCompiler';
 
-export default function table(this: ReVIEWCompiler, node: MDAST.Table & ConvertOptionsNode, parent: UNIST.Parent) {
-  const align = node.align.concat().map((a) => a || 'left');
+export default function table(this: ReVIEWCompiler, node: mdast.Table & ConvertOptionsNode, parent: unist.Parent) {
+  const align = (node.align || []).concat().map((a) => a || 'left');
   const alignStr =
     align.shift()![0].toLowerCase() +
     '|' +
@@ -22,8 +23,8 @@ export default function table(this: ReVIEWCompiler, node: MDAST.Table & ConvertO
   const nextNode = parent.children[nextNodeIdx];
 
   if (nextNode && nextNode.type === 'tableCaption') {
-    const tblCapNode = nextNode as MDAST.TableCaption;
-    visit(tblCapNode, 'crossReferenceLabel', (crNode: MDAST.CrossReferenceLabel) => {
+    const tblCapNode = nextNode as mdast.CaptionBlock;
+    visit(tblCapNode, 'crossReferenceLabel', (crNode: mdast.CrossReferenceLabel) => {
       label += this.convert(crNode);
       Object.assign(crNode, { type: 'ignore' });
       return true;
@@ -42,5 +43,5 @@ export default function table(this: ReVIEWCompiler, node: MDAST.Table & ConvertO
       value: this.all(node).join('\n'),
     },
     node,
-  ) as UNIST.Node;
+  ) as unist.Node;
 }

@@ -1,8 +1,8 @@
-import { MDAST } from 'mdast';
+import * as mdast from 'mdast';
 
 import ReVIEWCompiler from '../../ReVIEWCompiler';
 
-export default function footnote(this: ReVIEWCompiler, node: MDAST.Footnote) {
+export default function footnote(this: ReVIEWCompiler, node: mdast.Footnote) {
   const footnotes = this.footnotes;
   const identifiers = footnotes.map((f) => f.identifier);
 
@@ -11,15 +11,15 @@ export default function footnote(this: ReVIEWCompiler, node: MDAST.Footnote) {
     identifier++;
   }
 
-  const definitionNode: MDAST.FootnoteDefinition = {
+  const definitionNode: mdast.FootnoteDefinition = {
     type: 'footnoteDefinition',
     identifier: `${identifier}`,
-    children: node.children,
+    children: node.children as mdast.BlockContent[],
     position: node.position,
   };
   footnotes.push(definitionNode);
 
-  const referenceNode: MDAST.FootnoteReference = {
+  const referenceNode: mdast.FootnoteReference = {
     type: 'footnoteReference',
     identifier: `${identifier}`,
     position: node.position,

@@ -1,4 +1,4 @@
-import { UNIST } from 'unist';
+import * as unist from 'unist';
 import ReVIEWCompiler from '../ReVIEWCompiler';
 
 import join from './join';
@@ -17,10 +17,10 @@ import math from './math';
 import link from './link';
 import code from './code';
 
-const raw = (node: UNIST.Node) => node;
+const raw = (node: unist.Node) => node;
 
 export interface Converters {
-  [key: string]: (this: ReVIEWCompiler, node: UNIST.Node, parent?: UNIST.Parent) => UNIST.Node;
+  [key: string]: <Node extends unist.Node>(this: ReVIEWCompiler, node: Node, parent?: unist.Parent) => unist.Node;
 }
 
 export { ReVIEWCompiler };
@@ -38,7 +38,7 @@ export default {
   yaml: ignore,
   html: ignore,
   definition: ignore,
-  tableCaption: ignore,
+  captionBlock: ignore,
   footnoteDefinition: ignore,
   delete: join,
   strong: join,

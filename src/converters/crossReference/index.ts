@@ -1,8 +1,8 @@
-import { UNIST } from 'unist';
-import { MDAST } from 'mdast';
+import * as unist from 'unist';
+import * as mdast from 'mdast';
 import { defaultsDeep } from 'lodash';
 
-export default function crossReference(node: MDAST.CrossReference) {
+export default function crossReference(node: mdast.CrossReference) {
   const refs: string[] = [];
   const cites: string[] = [];
 
@@ -14,5 +14,5 @@ export default function crossReference(node: MDAST.CrossReference) {
     }
   }
 
-  return defaultsDeep({ refs, cites }, node) as UNIST.Node;
+  return defaultsDeep({ refs, cites }, node) as unist.Node;
 }

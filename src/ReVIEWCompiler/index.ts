@@ -8,8 +8,8 @@ import visit = require('unist-util-visit');
 
 import searchFile from '../searchFile';
 
-import { UNIST } from 'unist';
-import { MDAST } from 'mdast';
+import * as unist from 'unist';
+import * as mdast from 'mdast';
 
 export interface ReVIEWCompilerOptions {
   documentInfo: { [key: string]: any };
@@ -35,15 +35,15 @@ export default class ReVIEWCompiler {
   };
   static processor: any;
 
-  public footnotes: MDAST.FootnoteDefinition[] = [];
-  public definitions: { [identifier: string]: MDAST.Definition } = {};
-  public images: { [identifier: string]: MDAST.Image } = {};
+  public footnotes: mdast.FootnoteDefinition[] = [];
+  public definitions: { [identifier: string]: mdast.Definition } = {};
+  public images: { [identifier: string]: mdast.Image } = {};
   public converters: Converters = converters;
   public options: ReVIEWCompilerOptions = ReVIEWCompiler.defaultOptions;
 
   private templates: { [type: string]: ejs.TemplateFunction } = {};
 
-  constructor(public tree: UNIST.Node, public file: any) {
+  constructor(public tree: unist.Node, public file: any) {
     if (file.extension) {
       file.move({
         extension: 're',
@@ -90,7 +90,7 @@ export default class ReVIEWCompiler {
   compile() {
     const node = this.tree;
 
-    visit(node, 'yaml', (YAMLNode: MDAST.YAML) => {
+    visit<mdast.YAML>(node, 'yaml', (YAMLNode) => {
       try {
         this.options = defaultsDeep(jsYAML.safeLoad(YAMLNode.value) || {}, this.options);
 
@@ -106,28 +106,28 @@ export default class ReVIEWCompiler {
       }
     });
 
-    visit(node, 'definition', (def: MDAST.Definition) => {
+    visit<mdast.Definition>(node, 'definition', (def) => {
       const id = def.identifier.toUpperCase();
       this.definitions[id] = def;
       return true;
     });
-    visit(node, 'footnoteDefinition', (def: MDAST.FootnoteDefinition) => {
+    visit<mdast.FootnoteDefinition>(node, 'footnoteDefinition', (def) => {
       this.footnotes.push(def);
       return true;
     });
 
-    visit(node, 'image', (imgNode: MDAST.Image, idx, parent: UNIST.Parent) => {
+    visit<mdast.Image>(node, 'image', (imgNode, idx, parent) => {
       if (imgNode.url) {
-        const sibling = parent.children[idx! + 1];
+        const sibling = parent!.children[idx! + 1];
         if (sibling && sibling.type === 'crossReferenceLabel') {
-          const labelNode = sibling as MDAST.CrossReferenceLabel;
+          const labelNode = sibling as mdast.CrossReferenceLabel;
           this.images[labelNode.label] = imgNode;
         }
       }
       return true;
     });
 
-    visit(node, 'crossReference', (crossRefNode: MDAST.CrossReference) => {
+    visit<mdast.CrossReference>(node, 'crossReference', (crossRefNode) => {
       const identifiers = crossRefNode.identifiers;
       for (let idx = 0; idx < identifiers.length; idx++) {
         const identifier = identifiers[idx];
@@ -167,7 +167,7 @@ export default class ReVIEWCompiler {
     }
   }
 
-  visit(node: any, parent?: UNIST.Parent, idx: number = 0) {
+  visit(node: any, parent?: unist.Parent, idx: number = 0) {
     const type: string = node ? node.type : '';
     if (!type) {
       this.file.fail(`Expected node \`${node}\``);
@@ -181,16 +181,17 @@ export default class ReVIEWCompiler {
         isLast: parent ? idx === parent.children.length - 1 : true,
       },
       node,
-    ) as UNIST.Node & ConvertOptionsNode;
+    ) as unist.Node & ConvertOptionsNode;
 
     if (typeof this.converters[type] === 'function') {
-      cloneNode = this.converters[type].call(this, cloneNode, parent);
+      // FIXME
+      cloneNode = this.converters[type].call(this, cloneNode, parent) as any;
     }
 
     return this.convert(cloneNode);
   }
 
-  convert(node: UNIST.Node) {
+  convert(node: unist.Node) {
     const type: string = node ? node.type : '';
     if (!type) {
       return '';
@@ -207,7 +208,7 @@ export default class ReVIEWCompiler {
     return template({ node }).replace(/\n$/, '');
   }
 
-  all(parent: UNIST.Parent) {
+  all(parent: unist.Parent) {
     const children = parent.children;
     const length = children.length;
     const values: string[] = [];
@@ -234,7 +235,7 @@ export default class ReVIEWCompiler {
           value: this.all(def).join(''),
         },
         def,
-      ) as UNIST.Node;
+      ) as unist.Node;
       results.push(this.convert(node));
     });
 

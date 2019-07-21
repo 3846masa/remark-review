@@ -1,17 +1,17 @@
-import { UNIST } from 'unist';
-import { MDAST } from 'mdast';
+import * as unist from 'unist';
+import * as mdast from 'mdast';
 import { defaultsDeep } from 'lodash';
 import visit = require('unist-util-visit');
 
 import ReVIEWCompiler, { ConvertOptionsNode } from '../../ReVIEWCompiler';
 
-export default function math(this: ReVIEWCompiler, node: MDAST.Math & ConvertOptionsNode, parent: UNIST.Parent) {
+export default function math(this: ReVIEWCompiler, node: mdast.Math & ConvertOptionsNode, parent: unist.Parent) {
   let label = '';
 
   const nextNodeIdx = node.index + 1;
   const nextNode = parent.children[nextNodeIdx];
 
-  visit(nextNode, 'crossReferenceLabel', (crNode: MDAST.CrossReferenceLabel) => {
+  visit(nextNode, 'crossReferenceLabel', (crNode: mdast.CrossReferenceLabel) => {
     label += this.convert(crNode);
     Object.assign(crNode, { type: 'ignore' });
     return true;
@@ -22,5 +22,5 @@ export default function math(this: ReVIEWCompiler, node: MDAST.Math & ConvertOpt
       label,
     },
     node,
-  ) as UNIST.Node;
+  ) as unist.Node;
 }

@@ -1,13 +1,13 @@
-import { UNIST } from 'unist';
-import { MDAST } from 'mdast';
+import * as unist from 'unist';
+import * as mdast from 'mdast';
 import { defaultsDeep } from 'lodash';
 
 import ReVIEWCompiler from '../../ReVIEWCompiler';
 
 export default function reference(
   this: ReVIEWCompiler,
-  node: MDAST.LinkReference | MDAST.ImageReference,
-  parent: UNIST.Parent,
+  node: (mdast.LinkReference | mdast.ImageReference) & mdast.Association,
+  parent: unist.Parent,
 ) {
   const identifier = node.identifier.toUpperCase();
   const def = this.definitions[identifier] || {};
@@ -20,7 +20,7 @@ export default function reference(
       alt: def.title,
     },
     node,
-  ) as UNIST.Node;
+  ) as unist.Node;
 
   if (typeof this.converters[bind.type] === 'function') {
     return this.converters[bind.type].call(this, bind, parent);

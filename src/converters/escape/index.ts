@@ -1,13 +1,14 @@
-import { UNIST } from 'unist';
+import * as unist from 'unist';
+import * as mdast from 'mdast';
 import { defaultsDeep } from 'lodash';
 
-export default function escape(node: UNIST.Text) {
+export default function escape(node: mdast.Literal) {
   return defaultsDeep(
     {
       value: escapeReVIEW(node.value),
     },
     node,
-  ) as UNIST.Node;
+  ) as unist.Node;
 }
 
 function escapeReVIEW(text: string) {

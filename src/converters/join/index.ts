@@ -1,9 +1,9 @@
-import { UNIST } from 'unist';
+import * as unist from 'unist';
 import { defaultsDeep } from 'lodash';
 
 import ReVIEWCompiler from '../../ReVIEWCompiler';
 
-export default function join(this: ReVIEWCompiler, node: UNIST.Parent) {
+export default function join(this: ReVIEWCompiler, node: unist.Parent) {
   const value = this.all(node)
     .join('')
     .trim();
@@ -12,5 +12,5 @@ export default function join(this: ReVIEWCompiler, node: UNIST.Parent) {
       value,
     },
     node,
-  ) as UNIST.Node;
+  ) as unist.Node;
 }

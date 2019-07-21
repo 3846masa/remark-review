@@ -1,13 +1,13 @@
-import { UNIST } from 'unist';
-import { MDAST } from 'mdast';
+import * as unist from 'unist';
+import * as mdast from 'mdast';
 import visit = require('unist-util-visit');
 import { defaultsDeep } from 'lodash';
 
 import ReVIEWCompiler from '../../ReVIEWCompiler';
 
-export default function heading(this: ReVIEWCompiler, node: MDAST.Heading) {
+export default function heading(this: ReVIEWCompiler, node: mdast.Heading) {
   let label = '';
-  visit(node, 'crossReferenceLabel', (crNode: MDAST.CrossReferenceLabel) => {
+  visit(node, 'crossReferenceLabel', (crNode: mdast.CrossReferenceLabel) => {
     label += this.convert(crNode);
     Object.assign(crNode, { type: 'ignore' });
     return true;
@@ -19,5 +19,5 @@ export default function heading(this: ReVIEWCompiler, node: MDAST.Heading) {
       value: this.all(node).join(''),
     },
     node,
-  ) as UNIST.Node;
+  ) as unist.Node;
 }

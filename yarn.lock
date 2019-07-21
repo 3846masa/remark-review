@@ -39,27 +39,33 @@
     "@nodelib/fs.scandir" "2.1.1"
     fastq "^1.6.0"
 
-"@paperist/remark-crossref@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@paperist/remark-crossref/-/remark-crossref-1.0.3.tgz#36f5bd928535930dafff1f2bc1fb91ea9874b44c"
-  integrity sha512-KSxLFFg8T94D+XWcnYtqdSdKvYT0rATtRhoyE1RHGg96xCm7bsjaHYHM+ahRbdUlPuAeO60oCw2tNcSWSZlaEQ==
+"@paperist/remark-caption@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@paperist/remark-caption/-/remark-caption-2.0.0.tgz#0218a8ee7bcaeb1654bef3325639ca1cf7fd7252"
+  integrity sha512-vTC2mMejRdfbqG9VNKD2VJocdTowsn3IJtBmZ1z3Xi9Bv4xwVmZ7DCNG87/OP9wPRxckzkdidEqjYPwynYlSVg==
   dependencies:
-    unist-util-visit "^1.1.3"
+    "@types/mdast" "^3.0.2"
+    "@types/unist" "^2.0.3"
+    remark-parse "^7.0.0"
 
-"@paperist/remark-math@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@paperist/remark-math/-/remark-math-1.0.3.tgz#9800fd78ca43b7779301f435eed173187806f928"
-  integrity sha512-tpRAV5mjt5VHQ10FA/G0jNGsovqPihbUq9yVEsFhgJNx1Wsk/2/G/3FetOd9Dqx8GQZOEP+rmzpulrjEtftkug==
+"@paperist/remark-crossref@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@paperist/remark-crossref/-/remark-crossref-2.0.0.tgz#a217e18847096d4c13574684e8e25557d25ede27"
+  integrity sha512-JxP89dQCwL5Jh4l+03CwysF/2sc4c6X1cVRFN3wkJnrwcSyPyqLv6cuOJUR0jA3uA6Z1DZ9sU1HQSfYXb07jLA==
+  dependencies:
+    "@types/mdast" "^3.0.2"
+    "@types/unist" "^2.0.3"
+    remark-parse "^7.0.0"
+    unist-util-visit "^1.4.1"
 
-"@paperist/remark-table-caption@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@paperist/remark-table-caption/-/remark-table-caption-1.0.1.tgz#aa3bb54f393d2e666833fd217a3bf0497e6fac33"
-  integrity sha512-KEV7b7FvGkAfMpteB7vdrtNLFGEELGfpy151nFiLxB8hn1GKNr4MOt1xEXjU52wmWolcy5gI/1rT1Xc/1epUnw==
-
-"@paperist/types-remark@^0.1.3":
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/@paperist/types-remark/-/types-remark-0.1.3.tgz#a47f49d613d579630543f5cbc7736c90fbf8fde5"
-  integrity sha512-liJvMxGB0IinhxcoMYiSVOgk2z5CZ5/gvpNCXzVC9xVGVtON0lLJZro1ixo5qZJg1ir6N0BY99Y1u6jp2ZNYEg==
+"@paperist/remark-math@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@paperist/remark-math/-/remark-math-2.0.0.tgz#62b2d885f9310bc34e9c29eb7f8851f45b18a16d"
+  integrity sha512-rZ5Jvw5Y+XOjtEp39C3Sc1O5Y4vNZtfBL7qu8KShR/wLplKRYW8+bIH50nPVwxHJ058qoNGTIY++J+Zc27Ptgw==
+  dependencies:
+    "@types/mdast" "^3.0.2"
+    "@types/unist" "^2.0.3"
+    remark-parse "^7.0.0"
 
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
@@ -109,6 +115,13 @@
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.136.tgz#413e85089046b865d960c9ff1d400e04c31ab60f"
   integrity sha512-0GJhzBdvsW2RUccNHOBkabI8HZVdOXmXbXhuKlDEd5Vv12P7oAVGfomGp3Ne21o5D/qu1WmthlNKFaoZJJeErA==
 
+"@types/mdast@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@types/mdast/-/mdast-3.0.2.tgz#e9f15e27f590f341990a46eb5a140787af9e0144"
+  integrity sha512-ALBOAuHYL2RkABZGHQPPxHC5dsXnaVHpoIhE7e6HYzSzl6l4MjW5akjtAaz6wQpAbSOLp//5stHhjRsdcGj9UA==
+  dependencies:
+    "@types/unist" "*"
+
 "@types/minimatch@*":
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
@@ -129,7 +142,7 @@
   resolved "https://registry.yarnpkg.com/@types/normalize-package-data/-/normalize-package-data-2.4.0.tgz#e486d0d97396d79beedd0a6e33f4534ff6b4973e"
   integrity sha512-f5j5b/Gf71L+dbqxIpQ4Z2WlmI/mPJ0fOkGGmFgtb6sAu97EPczzbS3/tJKxmcYDj55OX6ssqwDAWOHIYDRDGA==
 
-"@types/unist@^2.0.0", "@types/unist@^2.0.2":
+"@types/unist@*", "@types/unist@^2.0.0", "@types/unist@^2.0.2", "@types/unist@^2.0.3":
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/@types/unist/-/unist-2.0.3.tgz#9c088679876f374eb5983f150d4787aa6fb32d7e"
   integrity sha512-FvUupuM3rlRsRtCN+fDudtmytGO6iHJuuRKS1Ss0pG5z8oX0diNEw94UEL7hgDbpN94rgaK5R7sWm6RrSkZuAQ==
@@ -3801,7 +3814,7 @@ unist-util-visit-parents@^2.0.0:
   dependencies:
     unist-util-is "^3.0.0"
 
-unist-util-visit@^1.1.0, unist-util-visit@^1.1.3, unist-util-visit@^1.4.1:
+unist-util-visit@^1.1.0, unist-util-visit@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/unist-util-visit/-/unist-util-visit-1.4.1.tgz#4724aaa8486e6ee6e26d7ff3c8685960d560b1e3"
   integrity sha512-AvGNk7Bb//EmJZyhtRUnNMEpId/AZ5Ph/KUpTI09WHQuDZHKovQ1oEv3mfmKpWKtoMzyMC4GLBm1Zy5k12fjIw==

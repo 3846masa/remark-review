@@ -1,7 +1,7 @@
-import { UNIST } from 'unist';
+import * as unist from 'unist';
 
 export default function ignore() {
   return {
     type: 'ignore',
-  } as UNIST.Node;
+  } as unist.Node;
 }

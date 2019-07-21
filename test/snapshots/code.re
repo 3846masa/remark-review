@@ -1,4 +1,4 @@
-@<raw>{|latex|\cite{code:hello-world\}} を使うと、JavaScript で Hello World を実行できます。
+@<list>{hello-world} を使うと、JavaScript で Hello World を実行できます。
 
 //list[hello-world][JavaScript のハローワールド][js]{
 console.log('Hello World!');

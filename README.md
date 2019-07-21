@@ -95,7 +95,7 @@ $$ math $$ {#eq:label}
 console.log('Hello World!');
 ```
 
-: Caption {#code:label}
+: Caption {#lst:label}
 ````
 
 #### References

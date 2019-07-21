@@ -2,6 +2,8 @@
   "name": "remark-review",
   "description": "wooorm/remark plugin for kmuto/review",
   "license": "MIT",
+  "author": "3846masa <3846masahiro+git@gmail.com>",
+  "repository": "git@github.com:3846masa/remark-review.git",
   "version": "0.1.0",
   "main": "lib/index.js",
   "files": [

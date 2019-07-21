@@ -7,19 +7,28 @@ import ReVIEWCompiler, { ConvertOptionsNode } from '../../ReVIEWCompiler';
 
 export default function math(this: ReVIEWCompiler, node: mdast.Math & ConvertOptionsNode, parent: unist.Parent) {
   let label = '';
+  let caption = '';
 
   const nextNodeIdx = node.index + 1;
   const nextNode = parent.children[nextNodeIdx];
 
-  visit(nextNode, 'crossReferenceLabel', (crNode: mdast.CrossReferenceLabel) => {
-    label += this.convert(crNode);
-    Object.assign(crNode, { type: 'ignore' });
-    return true;
-  });
+  if (nextNode && nextNode.type === 'captionBlock') {
+    const tblCapNode = nextNode as mdast.CaptionBlock;
+    visit(tblCapNode, 'crossReferenceLabel', (crNode: mdast.CrossReferenceLabel) => {
+      label += this.convert(crNode);
+      Object.assign(crNode, { type: 'ignore' });
+      return true;
+    });
+    caption = this.all(tblCapNode)
+      .join('')
+      .replace(/\n/g, '')
+      .trim();
+  }
 
   return defaultsDeep(
     {
       label,
+      caption,
     },
     node,
   ) as unist.Node;

@@ -1,5 +1,11 @@
 
+<% if (node.label) { -%>
+//texequationl[<%= node.label -%>][<%= node.caption -%>]{
+<%= node.math.trim() %>
+//}
+<% } else { -%>
 //texequation{
 <%= node.math.trim() %>
 //}
+<% } -%>
 <%# Line Break %>

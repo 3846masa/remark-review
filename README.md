@@ -69,7 +69,11 @@ Inspired by [pandoc-crossref].
 #### Equation label
 
 ```md
-$$ math $$ {#eq:label}
+$$
+x^2 + y^2 = r^2
+$$
+
+: Equation of a circle {#eq:label}
 ```
 
 #### Table caption / label

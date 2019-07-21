@@ -1,9 +1,9 @@
-import * as path from 'path';
-import * as globby from 'globby';
-import * as fs from 'fs-extra';
-import * as assert from 'assert';
+import path from 'path';
+import globby from 'globby';
+import fs from 'fs-extra';
+import assert from 'assert';
 
-import * as remark from 'remark';
+import remark from 'remark';
 import * as remarkReview from '../src/index';
 
 const IS_UPDATE_SNAPSHOTS = process.env.UPDATE_SNAPSHOTS === 'true';

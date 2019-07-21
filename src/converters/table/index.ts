@@ -22,7 +22,7 @@ export default function table(this: ReVIEWCompiler, node: mdast.Table & ConvertO
   const nextNodeIdx = node.index + 1;
   const nextNode = parent.children[nextNodeIdx];
 
-  if (nextNode && nextNode.type === 'tableCaption') {
+  if (nextNode && nextNode.type === 'captionBlock') {
     const tblCapNode = nextNode as mdast.CaptionBlock;
     visit(tblCapNode, 'crossReferenceLabel', (crNode: mdast.CrossReferenceLabel) => {
       label += this.convert(crNode);

@@ -15,7 +15,7 @@
   },
   "types": "lib/index.d.ts",
   "dependencies": {
-    "@paperist/remark-caption": "^2.0.0",
+    "@paperist/remark-caption": "^2.0.1",
     "@paperist/remark-crossref": "^2.0.0",
     "@paperist/remark-math": "^2.0.0",
     "ejs": "^2.6.2",

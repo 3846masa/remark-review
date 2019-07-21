@@ -23,10 +23,10 @@
     "@nodelib/fs.scandir" "2.1.1"
     fastq "^1.6.0"
 
-"@paperist/remark-caption@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@paperist/remark-caption/-/remark-caption-2.0.0.tgz#0218a8ee7bcaeb1654bef3325639ca1cf7fd7252"
-  integrity sha512-vTC2mMejRdfbqG9VNKD2VJocdTowsn3IJtBmZ1z3Xi9Bv4xwVmZ7DCNG87/OP9wPRxckzkdidEqjYPwynYlSVg==
+"@paperist/remark-caption@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@paperist/remark-caption/-/remark-caption-2.0.1.tgz#7ec487f0d2b2599e7a7b95d76f07c583f417f4cf"
+  integrity sha512-Nnjj35U/O6pYjl1PcH8w8Iz7HCWePc6baaHv9nXUc3ySS45NqAtqdb7iv4oUtGefiNpY3LdPxccofbcOJdYL+w==
   dependencies:
     "@types/mdast" "^3.0.2"
     "@types/unist" "^2.0.3"

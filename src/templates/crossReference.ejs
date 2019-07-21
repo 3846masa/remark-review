@@ -3,12 +3,14 @@ for (var idx = 0; idx < node.refs.length; idx++) {
   var ref = node.refs[idx];
   var trimmed = ref.split(':').pop();
 
-  if (ref.includes('fig:')) {
+  if (ref.startsWith('fig:')) {
     -%>@<img>{<%= trimmed -%>}<%
-  } else if (ref.includes('tbl:')) {
+  } else if (ref.startsWith('tbl:')) {
     -%>@<table>{<%= trimmed -%>}<%
-  } else if (ref.includes('code:')) {
+  } else if (ref.startsWith('code:')) {
     -%>@<list>{<%= trimmed -%>}<%
+  } else if (ref.startsWith('sec:')) {
+    -%>@<hd>{<%= trimmed -%>}<%
   } else {
     -%>@<raw>{|latex|\ref{<%= ref -%>\}}<%
   }

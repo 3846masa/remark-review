@@ -1,3 +1,3 @@
 
-<%= '='.repeat(node.depth) -%> <%= node.value -%>
+<%= '='.repeat(node.depth) -%><%= node.label ? `{${node.label}}` : '' -%> <%= node.value -%>
 <%# Line Break %>

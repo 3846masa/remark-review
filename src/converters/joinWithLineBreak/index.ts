@@ -1,5 +1,5 @@
 import * as unist from 'unist';
-import { defaultsDeep } from 'lodash';
+import defaultsDeep from 'lodash.defaultsdeep';
 
 import ReVIEWCompiler from '../../ReVIEWCompiler';
 

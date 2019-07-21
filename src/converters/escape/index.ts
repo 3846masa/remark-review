@@ -1,6 +1,6 @@
 import * as unist from 'unist';
 import * as mdast from 'mdast';
-import { defaultsDeep } from 'lodash';
+import defaultsDeep from 'lodash.defaultsdeep';
 
 export default function escape(node: mdast.Literal) {
   return defaultsDeep(

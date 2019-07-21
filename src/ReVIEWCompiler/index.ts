@@ -2,7 +2,7 @@ import path from 'path';
 import fs from 'fs';
 import ejs from 'ejs';
 import jsYAML from 'js-yaml';
-import { defaultsDeep } from 'lodash';
+import defaultsDeep from 'lodash.defaultsdeep';
 import converters, { Converters } from '../converters';
 import visit from 'unist-util-visit';
 

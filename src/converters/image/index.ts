@@ -1,7 +1,8 @@
 import * as unist from 'unist';
 import * as mdast from 'mdast';
 import qs from 'querystring';
-import { cloneDeep, defaultsDeep } from 'lodash';
+import cloneDeep from 'lodash.clonedeep';
+import defaultsDeep from 'lodash.defaultsdeep';
 
 import ReVIEWCompiler, { ConvertOptionsNode } from '../../ReVIEWCompiler';
 

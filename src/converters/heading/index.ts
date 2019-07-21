@@ -1,7 +1,7 @@
 import * as unist from 'unist';
 import * as mdast from 'mdast';
 import visit from 'unist-util-visit';
-import { defaultsDeep } from 'lodash';
+import defaultsDeep from 'lodash.defaultsdeep';
 
 import ReVIEWCompiler from '../../ReVIEWCompiler';
 

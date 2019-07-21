@@ -1,5 +1,5 @@
 import ReVIEWCompiler, { ReVIEWCompilerOptions } from './ReVIEWCompiler';
-import { defaultsDeep } from 'lodash';
+import defaultsDeep from 'lodash.defaultsdeep';
 
 import searchFile from './searchFile';
 

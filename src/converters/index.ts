@@ -46,7 +46,7 @@ export default {
   root: joinWithLineBreak,
   blockquote: joinWithLineBreak,
   list: joinWithLineBreak,
-  listItem: joinWithLineBreak,
+  listItem: join,
   tableRow: joinWithLineBreak,
   code: raw,
   crossReferenceLabel: raw,

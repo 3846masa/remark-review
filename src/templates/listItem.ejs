@@ -1,7 +1,11 @@
 <%
-if (node.ordered) {
-  -%> <%= node.index + 1 -%>. <%= node.value -%><%
+if (node.parent.ordered) {
+  -%> <%= node.index + 1 -%>. <%= node.value.trim() -%><%
 } else {
-  -%> <%= '*'.repeat(node.depth) -%> <%= node.value.trim() -%><%
+  function calcDepth(node) {
+    return (node.parent.type === 'list' && node.parent.parent.type === 'listItem') ? calcDepth(node.parent.parent) + 1 : 1;
+  }
+  const depth = calcDepth(node);
+  -%> <%= '*'.repeat(depth) -%> <%= node.value.trim() -%><%
 }
 -%>

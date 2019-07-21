@@ -6,7 +6,6 @@ import ReVIEWPlugin from './attacher';
 
 export const settings = {
   footnotes: true,
-  pedantic: true,
 };
 
 export const plugins: any = [FrontMatterPlugin, MathPlugin, CrossrefPlugin, TableCaptionPlugin, ReVIEWPlugin];

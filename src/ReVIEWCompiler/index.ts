@@ -148,6 +148,7 @@ export default class ReVIEWCompiler {
 
     let cloneNode = defaultsDeep(
       {
+        parent,
         index: idx,
         isFirst: parent ? idx === 0 : true,
         isLast: parent ? idx === parent.children.length - 1 : true,

@@ -6,8 +6,7 @@ import ReVIEWCompiler from '../../ReVIEWCompiler';
 export default function join(this: ReVIEWCompiler, node: UNIST.Parent) {
   const value = this.all(node)
     .join('')
-    .trim()
-    .replace(/\t/g, '\x20\x20');
+    .trim();
   return defaultsDeep(
     {
       value,

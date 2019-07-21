@@ -1,11 +1,10 @@
-# @3846masa-tmp/remark-review
+# remark-review
 
 [![LICENSE][license-badge]][license]
 [![standard-readme compliant][standard-readme-badge]][standard-readme]
 
 [license]: https://3846masa.mit-license.org
 [standard-readme]: https://github.com/RichardLitt/standard-readme
-
 [license-badge]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAIGNIUk0AAHomAACAhAAA%2BgAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAAVUExURSBTICJcIiNgIiZoJTuhNyt3Kf///%2BCqxSgAAAAGdFJOUwpclbn%2B4Fj6/H8AAAABYktHRAZhZrh9AAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJTUUH4AkEEjEV7MDQQwAAAGBJREFUCNc1TUEKgDAMi07vE/Q%2BRD8g%2B4BbvAvi/79iMjDQJm1CC6BbDzRsZI3incIpYeYFhCaYnLiyPYnYkwWZFWoFHrSuttCmmbwXh0eJQYVON4JthZTxCzzAmyb8%2BAAKXBRyN6RyZQAAAABJRU5ErkJggg==
 [standard-readme-badge]: https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square
 
@@ -41,7 +40,7 @@ npm i remark remark-cli github:3846masa-tmp/remark-review
 See [here][remark-cli] for more details.
 
 ```bash
-remark -u @3846masa-tmp/remark-review document.md -o document.re
+remark -u remark-review document.md -o document.re
 ```
 
 If you configure via `rc` file, you should type below.
@@ -73,9 +72,9 @@ $$ math $$ {#eq:label}
 #### Table caption / label
 
 ```md
-| a     | b     | c     |
-| :---: | :---: | :---: |
-| 1     | 2     | 3     |
+|  a  |  b  |  c  |
+| :-: | :-: | :-: |
+|  1  |  2  |  3  |
 
 : Caption {#tbl:label}
 ```
@@ -108,7 +107,7 @@ $$ math $$ {#eq:label}
 
 #### Fields
 
-| Field        | Description                                            |
+|    Field     | Description                                            |
 | :----------: | :----------------------------------------------------- |
 | baseTemplate | The document template                                  |
 | documentInfo | The data passed to the base template                   |
@@ -140,7 +139,7 @@ See also [here][remarkrc].
 # Required
 output: true
 plugins:
-  - "@3846masa-tmp/remark-review"
+  - remark-review
 
 # Optional
 # NOTE: You should put remark-review configs under `review`.
@@ -158,13 +157,13 @@ settings:
 You can configure each files via YAML Frontmatter.
 See also [here][yaml-frontmatter]
 
-
 ```md
 ---
 baseTemplate: ./review/template.re
 ---
 
 # Hello World
+
 Lorem ipsum dolor sit amet...
 ```
 

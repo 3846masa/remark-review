@@ -87,7 +87,13 @@ $$ math $$ {#eq:label}
 
 #### Code block label
 
-**Not implemented**
+````md
+```js
+console.log('Hello World!');
+```
+
+: Caption {#code:label}
+````
 
 #### References
 

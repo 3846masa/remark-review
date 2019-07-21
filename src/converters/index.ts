@@ -15,6 +15,7 @@ import crossReference from './crossReference';
 import footnoteReference from './footnoteReference';
 import math from './math';
 import link from './link';
+import code from './code';
 
 const raw = (node: UNIST.Node) => node;
 
@@ -33,6 +34,7 @@ export default {
   footnoteReference,
   math,
   link,
+  code,
   yaml: ignore,
   html: ignore,
   definition: ignore,
@@ -48,7 +50,6 @@ export default {
   list: joinWithLineBreak,
   listItem: join,
   tableRow: joinWithLineBreak,
-  code: raw,
   crossReferenceLabel: raw,
   inlineCode: escape,
   text: escape,

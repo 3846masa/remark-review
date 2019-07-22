@@ -4,7 +4,7 @@
   "license": "MIT",
   "author": "3846masa <3846masahiro+git@gmail.com>",
   "repository": "git@github.com:3846masa/remark-review.git",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "main": "lib/index.js",
   "files": [
     "lib"

@@ -160,7 +160,7 @@ settings:
   review:
     baseTemplate: review/template.re
     imageConfigs:
-      width: 0.9\linewidth
+      scale: 0.85
 ```
 
 [remarkrc]: https://github.com/unifiedjs/unified-engine/blob/master/doc/configure.md

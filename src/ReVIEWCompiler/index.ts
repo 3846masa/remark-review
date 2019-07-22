@@ -29,9 +29,7 @@ export default class ReVIEWCompiler {
     documentInfo: {},
     baseTemplate: null,
     templatesDir: path.resolve(__dirname, '../templates'),
-    imageConfigs: {
-      keepaspectratio: true,
-    },
+    imageConfigs: {},
   };
   static processor: any;
 

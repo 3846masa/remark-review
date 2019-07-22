@@ -66,7 +66,7 @@ ZIP 形式であれば、ファイルの追加も容易に行なえます。
 Word では、以下の画像のようなエラーが表示されるでしょう。
 
 
-//image[invalid-file][破損ファイルとして扱われる][keepaspectratio=true]{
+//image[invalid-file][破損ファイルとして扱われる][]{
 //}
 
 
@@ -78,7 +78,7 @@ Word ではメニューから行えるので、簡単にファイル埋め込み
 ZIP 展開したあとにもとの PDF ファイルと入れ替えて再度保存します。
 
 
-//image[ole-menu][Word にはファイル埋め込み機能がある][keepaspectratio=true]{
+//image[ole-menu][Word にはファイル埋め込み機能がある][]{
 //}
 
 

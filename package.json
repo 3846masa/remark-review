@@ -10,7 +10,9 @@
     "lib"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "npm-run-all clean -p build:*",
+    "build:cpx": "cpx \"src/**/!(*.ts)\" lib",
+    "build:tsc": "tsc",
     "clean": "rimraf lib/*",
     "test": "cross-env TS_NODE_TRANSPILE_ONLY=1 mocha --require espower-typescript/guess test/snapshot-test.ts",
     "update-snapshots": "cross-env UPDATE_SNAPSHOTS=true npm run test"
@@ -40,6 +42,7 @@
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.6.6",
     "@types/unist": "^2.0.3",
+    "cpx": "^1.5.0",
     "cross-env": "^5.2.0",
     "espower-typescript": "^9.0.2",
     "fs-extra": "^8.1.0",

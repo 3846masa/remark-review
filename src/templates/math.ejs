@@ -1,6 +1,6 @@
 
-<% if (node.label) { -%>
-//texequationl[<%= node.label -%>][<%= node.caption -%>]{
+<% if (node.label || node.caption) { -%>
+//texequation[<%= node.label -%>][<%= node.caption -%>]{
 <%= node.math.trim() %>
 //}
 <% } else { -%>

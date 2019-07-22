@@ -1,6 +1,6 @@
 @<m>{x^2 + y^2 = 1} は、半径 1 の円の方程式ですが、より汎用な式にすると @<eq>{label} のようになります。
 
 
-//texequationl[label][円の方程式]{
+//texequation[label][円の方程式]{
 x^2 + y^2 = r^2
 //}

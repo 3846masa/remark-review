@@ -116,6 +116,19 @@ console.log('Hello World!');
 [@jones99] or [@jones99;@smith06;...]
 ```
 
+#### Raw comment
+
+```md
+<!-- RAW: //indepimage[unixhistory2] -->
+
+<!--
+RAW:
+//graph[sin_x][gnuplot][Gnuplotの使用]{
+plot sin(x)
+//}
+-->
+```
+
 ### Configure
 
 #### Fields

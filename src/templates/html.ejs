@@ -1,0 +1,7 @@
+
+<%
+var RAW_COMMENT_REGEXP = /<!--\s*RAW:([\s\S]*?)-->/;
+if (typeof node.value === 'string' && RAW_COMMENT_REGEXP.test(node.value)) { -%>
+<%= RAW_COMMENT_REGEXP.exec(node.value)[1].trim() %>
+<% } -%>
+<%# Line Break %>

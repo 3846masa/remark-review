@@ -36,7 +36,7 @@ export default {
   link,
   code,
   yaml: ignore,
-  html: ignore,
+  html: raw,
   definition: ignore,
   captionBlock: ignore,
   footnoteDefinition: ignore,

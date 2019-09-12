@@ -11,7 +11,7 @@ export default function attacher(this: any, options: ReVIEWCompilerOptions) {
   );
 
   mergedOpts.baseTemplate = mergedOpts.baseTemplate ? searchFile(mergedOpts.baseTemplate) : null;
-  mergedOpts.templatesDir = searchFile(mergedOpts.templatesDir);
+  mergedOpts.templatesDir = searchFile(mergedOpts.templatesDir, { type: 'directory' });
 
   ReVIEWCompiler.defaultOptions = mergedOpts;
 

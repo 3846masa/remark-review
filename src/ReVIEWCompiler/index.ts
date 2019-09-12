@@ -93,9 +93,12 @@ export default class ReVIEWCompiler {
         this.options = defaultsDeep(jsYAML.safeLoad(YAMLNode.value) || {}, this.options);
 
         this.options.baseTemplate = this.options.baseTemplate
-          ? searchFile(this.options.baseTemplate, this.file.dirname)
+          ? searchFile(this.options.baseTemplate, { cwd: this.file.dirname })
           : null;
-        this.options.templatesDir = searchFile(this.options.templatesDir, this.file.dirname);
+        this.options.templatesDir = searchFile(this.options.templatesDir, {
+          type: 'directory',
+          cwd: this.file.dirname,
+        });
 
         return true;
       } catch (_e) {
